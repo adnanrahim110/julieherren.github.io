@@ -118,7 +118,7 @@ header {
 
 header .navbar {
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    padding: 30px 0px;
+    padding: 0px;
 }
 
 .menu_fixed {
@@ -134,6 +134,10 @@ header .navbar {
 .navbar-sticky.menu_fixed {
     background: #000;
     box-shadow: none;
+}
+
+.navbar-brand img {
+    height: 70px;
 }
 
 .navbar-sticky .navbar-nav li:not(:last-child) {
@@ -619,7 +623,12 @@ header .navbar {
 }
 
 .footer-mid {
-    padding-bottom: 80px;
+    padding-bottom: 10px;
+}
+
+.footer-widget img {
+    height: 220px;
+    transform: translateY(-50px);
 }
 
 .footer .footer-widget h2 {
