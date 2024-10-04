@@ -137,7 +137,7 @@ header .navbar {
 }
 
 .navbar-brand img {
-    height: 70px;
+    height: 80px;
 }
 
 .navbar-sticky .navbar-nav li:not(:last-child) {
