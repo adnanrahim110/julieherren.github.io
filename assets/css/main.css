@@ -250,6 +250,7 @@ header .navbar {
     padding-top: 100px;
     padding-bottom: 50px;
     margin-bottom: 100px;
+    overflow-x: hidden;
 }
 
 .hero-sec::before {
@@ -334,6 +335,7 @@ header .navbar {
     max-height: 300px;
     border: 5px solid #fff;
     box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
+    transform: translateX(100%);
 }
 
 /* About Section */
@@ -358,20 +360,7 @@ header .navbar {
     height: 100%;
     border-radius: 0px 100px 100px 0px;
     z-index: -1;
-}
-
-.about-sec:before {
-    position: absolute;
-    content: "";
-    left: 0px;
-    top: 0px;
-    background: #1c1c1c;
-    background-size: 150% 100%;
-    opacity: .85;
-    width: 47%;
-    height: 100%;
-    border-radius: 0px 100px 100px 0px;
-    z-index: -1;
+    transform: translateX(-100%);
 }
 
 .about-content h2 {
@@ -408,6 +397,7 @@ header .navbar {
 .aboutimg img {
     border: 10px solid #fff;
     box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
+    transform: translateX(-120%);
 }
 
 /* CTA section */
@@ -562,6 +552,10 @@ header .navbar {
     overflow: hidden;
     position: relative;
     transition: all .3s ease-out;
+}
+
+.ab-img-item img {
+    transform: translateX(-100%);
 }
 
 .ab-img-item::before {
