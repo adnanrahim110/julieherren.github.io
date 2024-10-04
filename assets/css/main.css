@@ -458,6 +458,15 @@ header .navbar {
     background: var(--secondary-color);
 }
 
+.press-sec {
+    padding-block: 50px;
+    background-color: var(--secondary-color);
+}
+
+.press div:nth-child(even) h2 {
+    color: #fff;
+}
+
 /* Testimonials section */
 
 .sub-style-2 {

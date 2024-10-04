@@ -14,6 +14,12 @@
   <meta name="theme-color" content="#ffffff">
 
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+    integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+    integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
@@ -43,6 +49,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link smooth-scroll" href="#author">Author</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link smooth-scroll" href="javascript:void(0)" id="scroll-link">Press Release</a>
             </li>
             <li class="nav-item">
               <a class="nav-link smooth-scroll" href="#reviews">Reviews</a>
@@ -162,6 +171,39 @@
                 <i class="lni lni-amazon mr-2"></i>Get it on Amazon
               </a>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="press-sec" id="pressRelease">
+      <div class="container">
+        <div class="press">
+          <div>
+            <h2>Press Release</h2>
+          </div>
+          <div>
+            <h2>Press Release</h2>
+          </div>
+          <div>
+            <h2>Press Release</h2>
+          </div>
+          <div>
+            <h2>Press Release</h2>
+          </div>
+          <div>
+            <h2>Press Release</h2>
+          </div>
+          <div>
+            <h2>Press Release</h2>
+          </div>
+          <div>
+            <h2>Press Release</h2>
+          </div>
+          <div>
+            <h2>Press Release</h2>
+          </div>
+          <div>
+            <h2>Press Release</h2>
           </div>
         </div>
       </div>
@@ -341,10 +383,51 @@
   <script src="assets/js/fontawesome.min.js"></script>
   <script src="assets/js/jquery-3.4.1.min.js"></script>
   <script src="assets/js/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+    integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="assets/js/popper.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/owl.carousel.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    // PRESS RELEASE SLIDER
+    $('.press').slick({
+      autoplay: true,
+      autoplaySpeed: 1500,
+      slidesToShow: 6,
+      slidesToScroll: 1,
+      arrows: false
+    });
+  </script>
+  <script>
+    document.getElementById('scroll-link').addEventListener('click', function () {
+      const target = document.getElementById('pressRelease');
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset; // Get the position relative to the entire document
+      const offset = 60; // Number of pixels before the target to stop
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition - offset; // Adjust distance by offset
+      const duration = 1000; // Scroll duration in milliseconds
+      let startTime = null;
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+
+      function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+      }
+
+      requestAnimationFrame(animation);
+    });
+  </script>
 
 </body>
 
