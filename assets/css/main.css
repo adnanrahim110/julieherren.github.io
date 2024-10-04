@@ -243,12 +243,13 @@ header .navbar {
 /* hero section */
 
 .hero-sec {
-    background: url(../images/banner-1.jpg) no-repeat;
+    background: url(../images/banner-1.jpg) no-repeat center;
     background-size: cover;
     position: relative;
     z-index: 1;
-    padding-top: 160px;
-    margin-bottom: 300px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 .hero-sec::before {
@@ -258,13 +259,13 @@ header .navbar {
     top: 0px;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to left, #343f52 0%, #386b1d 100%);
+    /* background: #e0be00; */
     opacity: .85;
     z-index: -1;
 }
 
 .hero-sec .banner-content {
-    padding-bottom: 80px;
+    padding-bottom: 50px;
 }
 
 .sub-heading {
@@ -282,9 +283,9 @@ header .navbar {
 }
 
 .hero-sec .banner-content h1 {
-    font-size: 60px;
-    line-height: 70px;
-    margin-bottom: 30px;
+    font-size: 45px;
+    line-height: 50px;
+    margin-bottom: 20px;
     color: #fff;
     font-weight: 700;
     text-transform: capitalize;
@@ -292,7 +293,8 @@ header .navbar {
 
 .hero-sec .banner-content p {
     color: #fff;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
+    padding-inline: 30px;
 }
 
 .btn-white {
@@ -310,7 +312,6 @@ header .navbar {
 .btn {
     font-weight: 600;
     position: relative;
-    text-transform: capitalize;
     padding: 14px 35px;
     border-radius: 0px;
     font-size: 16px;
@@ -329,8 +330,10 @@ header .navbar {
     background: var(--secondary-color);
 }
 
-.hero-sec .banner-img-round {
-    margin-bottom: -100px;
+.hero-sec .banner-img-round img {
+    max-height: 300px;
+    border: 5px solid #fff;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* About Section */
@@ -347,9 +350,10 @@ header .navbar {
     left: 0px;
     top: 0px;
     background: #F9F9F9;
-    background-image: url(../images/book-bg.jpg);
+    background-image: url(../images/banner-2.jpg);
     background-size: 150% 100%;
-    opacity: .2;
+    background-position: right;
+    opacity: .8;
     width: 47%;
     height: 100%;
     border-radius: 0px 100px 100px 0px;
@@ -399,6 +403,11 @@ header .navbar {
     background: #ffffff;
     opacity: .85;
     z-index: -1;
+}
+
+.aboutimg img {
+    border: 10px solid #fff;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* CTA section */
@@ -589,7 +598,7 @@ header .navbar {
 }
 
 .author-sec .about-content p {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .author-socials {
