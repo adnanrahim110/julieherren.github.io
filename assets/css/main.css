@@ -395,6 +395,7 @@ header .navbar {
     padding: 20px;
     border-radius: 20px;
     border: 2px solid var(--primary-color);
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.5);
 }
 
 .aboutimg img {
@@ -406,7 +407,7 @@ header .navbar {
 /* CTA section */
 
 .cta {
-    background: #386b1d;
+    background: #161732;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
