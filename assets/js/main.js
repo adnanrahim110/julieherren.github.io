@@ -2,8 +2,8 @@
     "use strict";
     $('.testimonials-slides-5').owlCarousel({
         loop: true,
-        dots: false,
-        nav: false,
+        dots: true,
+        nav: true,
         margin: 10,
         autoplayHoverPause: false,
         autoplay: true,
