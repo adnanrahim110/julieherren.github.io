@@ -432,7 +432,8 @@ header .navbar {
 
 .cta .cta-content h2 {
     color: #fff;
-    margin: 20px 0px 40px;
+    margin: 20px 0px 10px;
+    font-size: 38px;
 }
 
 .download-btn p {
