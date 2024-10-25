@@ -1,12 +1,38 @@
 (function ($) {
     "use strict";
+    $(document).ready(function () {
+        $('.testimonial-text').each(function () {
+            const $this = $(this);
+            const fullContent = $this.text();
+
+            $this.css('max-height', 'none');
+
+            if ($this[0].scrollHeight > $this.height()) {
+                $this.after('<a href="#" class="see-more" id="see-more">See more</a>');
+            }
+
+            $this.css('max-height', '3.8em');
+        });
+
+        $(document).on('click', '.see-more', function (e) {
+            e.preventDefault();
+            const fullText = $(this).prev('.testimonial-text').text();
+            $('#fullText').text(fullText);
+            $('#popup').css('display', 'flex'); // Show the popup
+        });
+
+        // Close the popup when 'close' button is clicked
+        $(document).on('click', '.close-btn', function () {
+            $('#popup').hide(); // Hide the popup
+        });
+    });
     $('.testimonials-slides-5').owlCarousel({
         loop: true,
         dots: true,
         nav: true,
         margin: 10,
         autoplayHoverPause: false,
-        autoplay: true,
+        // autoplay: true,
         responsiveClass: true,
         responsive: {
             0: {
