@@ -20,13 +20,13 @@ if (isset($_POST['add_email'])) {
       $mail->isSMTP();
       $mail->Host = 'smtp.gmail.com'; // Replace with your SMTP server
       $mail->SMTPAuth = true;
-      $mail->Username = 'info@amazonselfpublishingcompany.com'; // Your SMTP username
-      $mail->Password = 'lokk euyq srvi ionk'; // Your SMTP password
+      $mail->Username = 'juliherrenfiction@gmail.com'; // Your SMTP username
+      $mail->Password = 'mkmm dvhp yxyt mtqg'; // Your SMTP password
       $mail->SMTPSecure = 'tls';
       $mail->Port = 587;
 
       // Recipient settings for user email
-      $mail->setFrom('info@amazonselfpublishingcompany.com', 'Amazon Self Publishing Company');
+      $mail->setFrom('juliherrenfiction@gmail.com', 'Juli Herren');
       $mail->addAddress($email);
 
       // Email content for user
@@ -37,7 +37,6 @@ if (isset($_POST['add_email'])) {
 
       // Check if user email was sent successfully
       if ($mail->send()) {
-        echo "Thank you for subscribing! Please check your email for confirmation.";
 
         // Create a new PHPMailer instance for admin notification email
         $adminMail = new PHPMailer(true);
@@ -46,14 +45,14 @@ if (isset($_POST['add_email'])) {
         $adminMail->isSMTP();
         $adminMail->Host = 'smtp.gmail.com'; // Same SMTP server
         $adminMail->SMTPAuth = true;
-        $adminMail->Username = 'info@amazonselfpublishingcompany.com';
-        $adminMail->Password = 'lokk euyq srvi ionk';
+        $adminMail->Username = 'juliherrenfiction@gmail.com';
+        $adminMail->Password = 'mkmm dvhp yxyt mtqg';
         $adminMail->SMTPSecure = 'tls';
         $adminMail->Port = 587;
 
         // Admin recipient settings
-        $adminMail->setFrom('juliherren@gmail.com.com', 'Amazon Self Publishing Company');
-        $adminMail->addAddress('adnankaka.786110@gmail.com'); // Admin email address
+        $adminMail->setFrom('juliherren@gmail.com.com', 'Juli Herren');
+        $adminMail->addAddress('juliherren@gmail.com.com'); // Admin email address
 
         // Load admin email template and replace placeholder
         $adminEmailTemplate = file_get_contents('admin_email_template.html');
@@ -66,9 +65,19 @@ if (isset($_POST['add_email'])) {
 
         // Send email to admin
         if ($adminMail->send()) {
-          echo " Admin has been notified of the new signup.";
+          header("Location: index.html");
+          echo "
+          <script>
+            alert('Thank you for subscribing!');
+          </script>
+        ";
         } else {
-          echo " The user was subscribed, but the admin notification could not be sent.";
+          header("Location: index.html");
+          echo "
+          <script>
+            alert('Thank you for subscribing!');
+          </script>
+        ";
         }
       } else {
         echo "The subscription email could not be sent. Please try again.";

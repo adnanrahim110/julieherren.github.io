@@ -170,9 +170,12 @@
           </div>
           <div class="col-lg-4 col-xl-5">
             <div class="download-btn">
-              <div class="d_btns ">
-                <a href="#" class="btn btn-black d-block">
+              <div class="d_btns d-flex justify-content-between">
+                <a href="#" class="btn btn-black">
                   <i class="lni lni-amazon mr-2"></i>Buy on Amazon
+                </a>
+                <a href="assets/pdf/BOOK CLUB DISCUSSION GUIDE.pdf" class="btn btn-white" download>
+                  <i class="lni lni-download mr-2"></i>Book club guide
                 </a>
               </div>
             </div>
@@ -494,18 +497,11 @@
     </div>
     <div class="footer-btm">
       <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
           <div class="col-xl-6 col-sm-12 col-lg-6 col-md-6">
-            <p class="mb-0 copyright text-lg-start">© 2021 Copyright All rights reserved by
+            <p class="mb-0 copyright text-center">© <span id="year"></span> Copyright All rights reserved by
               <a href="">Juli A. Herren </a>
             </p>
-          </div>
-          <div class="col-xl-6 col-sm-12 col-lg-6 col-md-6">
-            <div class="footer-btm-links text-left text-lg-right">
-              <a href="#">Legal</a>
-              <a href="#">Supports</a>
-              <a href="#">Terms</a>
-            </div>
           </div>
         </div>
       </div>
@@ -557,6 +553,7 @@
         document.querySelector('.body_popup').style.display = 'none';
       });
     });
+    document.getElementById('year').innerHTML = new Date().getFullYear();
   </script>
 
 </body>
