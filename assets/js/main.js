@@ -26,6 +26,7 @@
         margin: 10,
         autoplayHoverPause: false,
         autoplay: true,
+        autoplaySpeed: 3000,
         responsiveClass: true,
         responsive: {
             0: {
